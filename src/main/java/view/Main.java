@@ -2,22 +2,41 @@ package view;
 
 import model.Aluno;
 import service.AlunoService;
+import java.util.Scanner;
 
 public class Main {
     static void main(String[] args) {
-
+        Scanner scan = new Scanner(System.in);
         AlunoService service = new AlunoService();
+        int opcao;
 
-        Aluno aluno1 = new Aluno("Luciano Peixoto", "Masculino", 123, 18, 8.5);
+        do {
+            System.out.println("\n--- MENU FATEC ADS ---");
+            System.out.println("1 - Adicionar Aluno");
+            System.out.println("2 - Listar Alunos");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha: ");
+            opcao = Integer.parseInt(scan.nextLine());
 
-        service.adicionar(aluno1);
+            if (opcao == 1){
+                System.out.print("Nome: ");
+                String nome = scan.nextLine();
+                System.out.print("RA: ");
+                int ra = Integer.parseInt(scan.nextLine());
+                System.out.print("Média: ");
+                double media = Double.parseDouble(scan.nextLine());
 
-        System.out.println("--- Teste de Cadastro (ArrayList) ---");
-        for (Aluno a : service.listarTodos()) {
-            System.out.println("Nome: " + a.getNome());
-            System.out.println("RA: " + a.getRa());
-            System.out.println("Status: " + a.getResultado()); // Deve imprimir "Aprovado"
-            System.out.println("------------------------------------");
-        }
+                service.adicionar(new Aluno(nome, "M", ra, 18, media));
+                System.out.println("Aluno salvo com sucesso!");
+
+            } else if (opcao == 2) {
+                System.out.println("\n--- LISTA DE ALUNOS ---");
+                for (Aluno a : service.listarTodos()){
+                    System.out.println(a);
+                }
+
+            }
+        } while (opcao != 0);
+        scan.close();
     }
 }
