@@ -1,3 +1,5 @@
+package model;
+
 public class Aluno {
     private String nome, sexo;
     private int ra, idade;
@@ -81,3 +83,4 @@ public class Aluno {
                 '}';
     }
 }
+
