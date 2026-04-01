@@ -1,4 +1,4 @@
-package model;
+package main.java.model;
 
 public class Aluno {
     private String nome, sexo;
@@ -73,14 +73,14 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", ra=" + ra +
-                ", idade=" + idade +
-                ", media=" + media +
-                ", resultado='" + resultado + '\'' +
-                '}';
+        return
+                "nome = '" + nome + '\'' +
+                ", sexo = '" + sexo + '\'' +
+                ", ra = " + ra +
+                ", idade = " + idade +
+                ", media = " + media +
+                ", resultado = '" + resultado + '\''
+                ;
     }
 }
 

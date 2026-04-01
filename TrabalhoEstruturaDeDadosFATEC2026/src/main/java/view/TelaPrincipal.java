@@ -1,7 +1,7 @@
-package view;
+package main.java.view;
 
-import model.Aluno;
-import service.AlunoService;
+import main.java.model.Aluno;
+import main.java.service.AlunoService;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;

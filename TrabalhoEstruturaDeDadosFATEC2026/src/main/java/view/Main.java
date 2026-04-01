@@ -1,8 +1,10 @@
-package view;
+package main.java.view;
 
+import main.java.model.Aluno;
+import main.java.service.AlunoService;
+
+import java.util.List;
 import java.util.Scanner;
-import service.AlunoService;
-import model.Aluno;
 
 
 public class Main {
