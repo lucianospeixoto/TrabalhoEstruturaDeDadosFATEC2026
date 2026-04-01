@@ -1,6 +1,6 @@
-package service;
+package main.java.service;
 
-import model.Aluno;
+import main.java.model.Aluno;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,17 +17,64 @@ public class AlunoService {
     }
 
     public void ordenarPorNomeCrescente() {
-        // TODO: Implementar ordenação por nome crescente
+        //bubble sort
+        int n = listaAlunos.size();
+        for (int i=0; i<n-1; i++) {
+            for (int j= 0; j<n-i-1; j++) {
+                if (listaAlunos.get(j).getNome().compareTo(listaAlunos.get(j+1).getNome()) > 0){
+                        Aluno temp = listaAlunos.get(j);
+                        listaAlunos.set(j, listaAlunos.get(j+1));
+                        listaAlunos.set(j+1,temp);
+                }
+            }
+        }
+        for (Aluno aluno : listaAlunos) {
+            System.out.println(aluno);
+        }
     }
 
     public void ordenarPorRADecrescente() {
-        // TODO: Implementar ordenação de RA de forma decrescente
+       //selection sort
+        int n = listaAlunos.size();
+        for (int i=0; i<n-1; i++) {
+            int pos_maior = i;
+            for (int j= i+1; j < n ; j++) {
+                if (listaAlunos.get(j).getRa() > listaAlunos.get(pos_maior).getRa()){
+                    pos_maior = j;
+                }
+            }
+            Aluno temp = listaAlunos.get(i);
+            listaAlunos.set(i,listaAlunos.get(pos_maior));
+            listaAlunos.set(pos_maior,temp);
+        }
+        for (Aluno aluno : listaAlunos) {
+            System.out.println(aluno);
+        }
     }
 
     public List<Aluno> filtrarAprovadosOrdenados() {
         List<Aluno> aprovados = new ArrayList<>();
         // TODO: 1. Filtrar quem tem status "Aprovado"
+        for(Aluno aluno : listaAlunos){
+            if (aluno.getResultado().equals("Aprovado")){
+                aprovados.add(aluno);
+            }
+        }
         // TODO: 2. Ordenar essa nova lista por nome
+        int n = aprovados.size();
+        for (int i=0; i<n-1; i++) {
+            for (int j= 0; j<n-i-1; j++) {
+                if (aprovados.get(j).getNome().compareTo(aprovados.get(j+1).getNome()) > 0 ){
+                    Aluno temp = aprovados.get(j);
+                    aprovados.set(j, aprovados.get(j+1));
+                    aprovados.set(j+1,temp);
+                }
+            }
+        }
+        for (Aluno aluno : aprovados) {
+            System.out.println(aluno);
+        }
         return aprovados;
     }
+
 }
