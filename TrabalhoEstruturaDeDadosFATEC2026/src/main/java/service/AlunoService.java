@@ -54,13 +54,11 @@ public class AlunoService {
 
     public List<Aluno> filtrarAprovadosOrdenados() {
         List<Aluno> aprovados = new ArrayList<>();
-        // TODO: 1. Filtrar quem tem status "Aprovado"
         for(Aluno aluno : listaAlunos){
             if (aluno.getResultado().equals("Aprovado")){
                 aprovados.add(aluno);
             }
         }
-        // TODO: 2. Ordenar essa nova lista por nome
         int n = aprovados.size();
         for (int i=0; i<n-1; i++) {
             for (int j= 0; j<n-i-1; j++) {

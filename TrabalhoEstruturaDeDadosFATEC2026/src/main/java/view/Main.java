@@ -54,27 +54,27 @@ public class Main {
                     break;
 
                 case 2:
-                    // REQUISITO 2: Ordenar A-Z [cite: 28]
+                    // REQUISITO 2: Ordenar A-Z
                     service.ordenarPorNomeCrescente();
                     System.out.println("--- Relatorio por Nome ---");
                     service.listarTodos();
                     break;
 
                 case 3:
-                    // REQUISITO 3: RA Decrescente [cite: 29]
+                    // REQUISITO 3: RA Decrescente
                     service.ordenarPorRADecrescente();
                     System.out.println("--- Relatorio por RA (Maior para Menor) ---");
                     service.listarTodos();
                     break;
 
                 case 4:
-                    // REQUISITO 4: Aprovados [cite: 30]
+                    // REQUISITO 4: Aprovados
                     System.out.println("--- Lista de Aprovados ---");
                     service.filtrarAprovadosOrdenados();
                     break;
 
                 case 5:
-                    // REQUISITO 5: Encerrar [cite: 32]
+                    // REQUISITO 5: Encerrar
                     System.out.println("Encerrando o programa...");
                     break;
 
